@@ -21,9 +21,12 @@ find / -type f -user "user01" 2>/dev/null
 ```
 => Nothing came out
 
-    find / -type f -user "level01" 2>/dev/null
-
+4. try another one. 
+```
+find / -type f -user "level01" 2>/dev/null
+```
 => with this command, I got the results as below,
+
 => but nothing is related to the "password" or "flag01" or "user01"
 
 ```
