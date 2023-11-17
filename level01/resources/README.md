@@ -4,7 +4,7 @@ LEVEL01
 
 
 1. Login to the level01
-
+    
     ssh -i ~/.ssh/id_rsa.pub level01@165.22.17.96 -p 4242
 
 2. The password of level01 is the token from level00
