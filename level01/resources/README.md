@@ -1,20 +1,32 @@
 
-1.Login to the level01
-`ssh -i ~/.ssh/id_rsa.pub level01@165.22.17.96 -p 4242`
+LEVEL01
+=======
 
-The password of level01 is the token from level00
-`x24ti5gi3x0ol2eh4esiuxias`
 
-So, try to apply the same logic as level00 
-(2>/dev/null : Redirect error messages to null, effectively suppressing them)
-`find / -type f -user "flag01" 2>/dev/null`
-`find / -type f -user "user01" 2>/dev/null`
+1. Login to the level01
+
+    ssh -i ~/.ssh/id_rsa.pub level01@165.22.17.96 -p 4242
+
+2. The password of level01 is the token from level00
+
+    x24ti5gi3x0ol2eh4esiuxias
+
+3. So, try to apply the same logic as level00 
+
+`2>/dev/null : Redirect error messages to null, effectively suppressing them`
+
+```
+find / -type f -user "flag01" 2>/dev/null
+find / -type f -user "user01" 2>/dev/null
+```
 => Nothing came out
 
-`find / -type f -user "level01" 2>/dev/null`
+    find / -type f -user "level01" 2>/dev/null
+
 => with this command, I got the results as below,
 => but nothing is related to the "password" or "flag01" or "user01"
-`
+
+```
 level01@SnowCrash:~$ find / -type f -user "level01" 2>/dev/null
 /proc/5980/task/5980/fdinfo/0
 /proc/5980/task/5980/fdinfo/1
@@ -29,18 +41,16 @@ level01@SnowCrash:~$ find / -type f -user "level01" 2>/dev/null
 /proc/5980/task/5980/personality
 /proc/6413/io
 ....
-`
+```
 
+4. So, try to find the other command  with the password 
 
-
-
-So, try to find the other command  with the password 
-
-`cat /etc/passwd`
+    cat /etc/passwd
 
 and then I can find the results as below
 
-`level01@SnowCrash:~$ cat /etc/passwd
+```
+level01@SnowCrash:~$ cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/bin/sh
 bin:x:2:2:bin:/bin:/bin/sh
@@ -94,13 +104,12 @@ flag10:x:3010:3010::/home/flag/flag10:/bin/bash
 flag11:x:3011:3011::/home/flag/flag11:/bin/bash
 flag12:x:3012:3012::/home/flag/flag12:/bin/bash
 flag13:x:3013:3013::/home/flag/flag13:/bin/bash
-flag14:x:3014:3014::/home/flag/flag14:/bin/bash`
+flag14:x:3014:3014::/home/flag/flag14:/bin/bash
+```
 
+`flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash`
 
-
-flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
-
-Try to put this password ? This was wrong password
+5. Try to put this password ? This was wrong password
 
 The password is hashed, so need to find the algorithm to find the way to crack the hashed password
 Indice :Jotn the Ripper
