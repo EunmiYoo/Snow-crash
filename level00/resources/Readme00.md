@@ -17,30 +17,33 @@ LEVEL00
  ```       
 2.  Nothing can be found with ls.
     Result of ls -la
+    
     ![Alt text](image-1.png)
 
 3.  Need to find the password for "su flag00"
 
 4.  Result of wrong password.
+ 
     ![Alt text](image-2.png)
 
-5.  `Once registered, you’re gonna have to find the password that will log you in with
-the "flagXX" account. 
-So, need to find the account who use flag00` (written in the subject ).
-    So, try to put the command as below to find the flag00 in the file type
+5.  Once registered, you’re gonna have to find the password that will log you in with
+the "flagXX" account. So, need to find the account who use flag00` (written in the subject ).So, try to put the command as below to find the flag00 in the file type
     `find / -type f -user flag00`
+```
+    1) find / : Starts the search from the root directory. This search will include all directories and subdirecotires
 
-                                                1) find / : Starts the search from the root directory. This search will include all directories and subdirecotires
+    2)  -user flag00 : Specifices the search criterion. It looks for files owned by the user with the username "flag00"
+    
+    3) -exec ls -l {} \;: Executes the ls -l command on each file found. The {} is a placeholder for the current file, and \; signifies the end of the -exec command.
 
-                                                2)  -user flag00 : Specifices the search criterion. It looks for files owned by the user with the username "flag00"
-                                                3) -exec ls -l {} \;: Executes the ls -l command on each file found. The {} is a placeholder for the current file, and \; signifies the end of the -exec command.
+    4)2>/dev/null: Redirects standard error (file descriptor 2) to /dev/null, effectively discarding error messages. This is done to suppress error messages related to inaccessible directories or files due to permission issues.
+```                                                                                     
 
-                                                4)2>/dev/null: Redirects standard error (file descriptor 2) to /dev/null, effectively discarding error messages. This is done to suppress error messages related to inaccessible directories or files due to permission issues.
-                                                                                                 There are only 2 file paths which doesn't show "Permission denied"
+There are only 2 file paths which doesn't show "Permission denied"
 
 ![Alt text](image-3.png)
 
-    They possess the same password as cdiiddwpgswtgt
+They possess the same password as cdiiddwpgswtgt
 
 ![Alt text](image-4.png)
 
@@ -67,5 +70,5 @@ REF : https://www.dcode.fr/chiffre-rot
 
 ![Alt text](<Capture d’écran 2023-11-13 à 20.52.32.png>)
 
-- So I tried to use the first decrypted result (ROT 15), so that's how we got the result!
+So I tried to use the first decrypted result (ROT 15), so that's how we got the result!
   ![Alt text](image-5.png)
