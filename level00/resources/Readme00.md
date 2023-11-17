@@ -17,14 +17,14 @@ LEVEL00
  ```       
 2.  Nothing can be found with ls.
     Result of ls -la
-
-    ![Alt text](image-1.png)
+    
+    <img src="image-1.png" width="700px" height="200px"></img>
 
 3.  Need to find the password for "su flag00"
 
 4.  Result of wrong password.
  
-    ![Alt text](image-2.png)
+     <img src="image-2.png" width="700px" height="150px"></img>
 
 5.  Once registered, you’re gonna have to find the password that will log you in with
 the "flagXX" account. So, we need to find the account who use flag00 (written in the subject). So, try to put the command as below to find the flag00 in the file type.
@@ -44,11 +44,11 @@ the "flagXX" account. So, we need to find the account who use flag00 (written in
 There are only 2 file paths which doesn't show "Permission denied"
 
 
-![Alt text](image-3.png)
+ <img src="image-1.png" width="700px" height="500px"></img>
 
 They possess the same password as cdiiddwpgswtgt
 
-![Alt text](image-4.png)
+ <img src="image-1.png" width="500px" height="100px"></img>
 
 => But it was NOT the correct password. We can possibly think, maybe this password is encyrpted? in this case, we need to decrypt them.
 
