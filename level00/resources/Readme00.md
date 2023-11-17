@@ -1,9 +1,11 @@
+LEVEL00
+=======
 1.  First, connect to ssh with your ip address :
+```
+    ssh -i ~/.ssh/id_rsa.pub level00@165.22.17.96 -p 4242
 
-        ssh -i ~/.ssh/id_rsa.pub level00@165.22.17.96 -p 4242
-
-        level00@165.22.17.96's password:
-
+    level00@165.22.17.96's password:
+        
     level00@SnowCrash:~$ ls
     level00@SnowCrash:~$ ls -la
     total 12
@@ -12,7 +14,7 @@
     -r-xr-x---+ 1 level00 level00 220 Apr 3 2012 .bash_logout
     -r-xr-x---+ 1 level00 level00 3518 Aug 30 2015 .bashrc
     -r-xr-x---+ 1 level00 level00 675 Apr 3 2012 .profile
-
+ ```       
 2.  Nothing can be found with ls.
     Result of ls -la
     ![Alt text](image-1.png)
