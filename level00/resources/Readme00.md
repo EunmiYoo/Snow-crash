@@ -17,7 +17,7 @@ LEVEL00
  ```       
 2.  Nothing can be found with ls.
     Result of ls -la
-    
+
     ![Alt text](image-1.png)
 
 3.  Need to find the password for "su flag00"
@@ -27,8 +27,10 @@ LEVEL00
     ![Alt text](image-2.png)
 
 5.  Once registered, you’re gonna have to find the password that will log you in with
-the "flagXX" account. So, need to find the account who use flag00` (written in the subject ).So, try to put the command as below to find the flag00 in the file type
-    `find / -type f -user flag00`
+the "flagXX" account. So, we need to find the account who use flag00 (written in the subject). So, try to put the command as below to find the flag00 in the file type.
+
+`find / -type f -user flag00`
+
 ```
     1) find / : Starts the search from the root directory. This search will include all directories and subdirecotires
 
