@@ -43,6 +43,7 @@ the "flagXX" account. So, we need to find the account who use flag00 (written in
 
 There are only 2 file paths which doesn't show "Permission denied"
 
+
 ![Alt text](image-3.png)
 
 They possess the same password as cdiiddwpgswtgt
@@ -68,9 +69,10 @@ ROT13 Reverse Translation
   - if this value is negative, then substract the absolute value of it from 26
 - This is the new position
 
-REF : https://www.dcode.fr/chiffre-rot
+REF : <https://www.dcode.fr/chiffre-rot>
 
-![Alt text](<Capture d’écran 2023-11-13 à 20.52.32.png>)
+![Alt text](image-6.png)
 
 So I tried to use the first decrypted result (ROT 15), so that's how we got the result!
-  ![Alt text](image-5.png)
+
+![Alt text](image-5.png)
