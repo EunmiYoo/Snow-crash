@@ -71,8 +71,7 @@ ROT13 Reverse Translation
 
 REF : <https://www.dcode.fr/chiffre-rot>
 
-![Alt text](image-6.png)
-<img src="image-6.png" width="500px" height="350px"></img><br/>
+<img src="image-6.png" width="700px" height="400px"></img>
 
 So I tried to use the first decrypted result (ROT 15), so that's how we got the result!
 
