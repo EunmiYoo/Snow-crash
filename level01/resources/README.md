@@ -147,9 +147,10 @@ level01@127.0.0.1: : user's name and host address
 
 => Install the "John the Ripper" and the crack the password.
 
-`flag01@SnowCrash:~$ su flag01
+````flag01@SnowCrash:~$ su flag01
 Password:
 Don't forget to launch getflag !
 flag01@SnowCrash:~$ getflag
 Check flag.Here is your token : f2av5il02puano7naaf6adaaf
-flag01@SnowCrash:~$`
+flag01@SnowCrash:~$```
+````
