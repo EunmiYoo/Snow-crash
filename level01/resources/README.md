@@ -1,17 +1,18 @@
-
-LEVEL01
-=======
-
+# LEVEL01
 
 1. Login to the level01
+
 ```
 ssh -i ~/.ssh/id_rsa.pub level01@165.22.17.96 -p 4242
 ```
+
 2. The password of level01 is the token from level00
+
 ```
     x24ti5gi3x0ol2eh4esiuxias
 ```
-3. So, try to apply the same logic as level00 
+
+3. So, try to apply the same logic as level00
 
 `2>/dev/null : Redirect error messages to null, effectively suppressing them`
 
@@ -19,12 +20,15 @@ ssh -i ~/.ssh/id_rsa.pub level01@165.22.17.96 -p 4242
 find / -type f -user "flag01" 2>/dev/null
 find / -type f -user "user01" 2>/dev/null
 ```
+
 => Nothing came out
 
-4. try another one. 
+4. try another one.
+
 ```
 find / -type f -user "level01" 2>/dev/null
 ```
+
 => with this command, I got the results as below,
 
 => but nothing is related to the "password" or "flag01" or "user01"
@@ -46,10 +50,12 @@ level01@SnowCrash:~$ find / -type f -user "level01" 2>/dev/null
 ....
 ```
 
-4. So, try to find the other command  with the password 
+4. So, try to find the other command with the password
+
 ```
 cat /etc/passwd
 ```
+
 and then I can find the results as below
 
 ```
@@ -115,8 +121,24 @@ flag14:x:3014:3014::/home/flag/flag14:/bin/bash
 5. Try to put this password ? This was wrong password
 
 The password is hashed, so need to find the algorithm to find the way to crack the hashed password
-Indice :Jotn the Ripper
+=> Need to use "John the Ripper" to crack the password, but John is not installed on the file
 
+https://www.openwall.com/john/
 
+John the Ripper : is the open source password cracking tool available for many operating systems.
 
+Need to know the notion of "hash"
 
+One way function =======>
+Input -> Hash Function -> Output
+<======= Impossible to reverse the hash
+
+- Before executing the "John the Ripper", first, we need to copy our password safely.
+
+scp :Secure Copy
+-P 4242 :connection for ssh, we use port 4242
+level01@127.0.0.1: : user's name and host address
+/etc/passwd : path of file that we will copy
+. : the place where we save our copy, "Current directory"
+
+`scp -P 4242 level01@127.0.0.1:/etc/passwd .`
