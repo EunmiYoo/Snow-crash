@@ -117,6 +117,8 @@ flag14:x:3014:3014::/home/flag/flag14:/bin/bash
 ```
 
 `flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash`
+=> Found the clue of flag01,
+maybe decode the "42hDRfypTqqnw"?
 
 5. Try to put this password ? This was wrong password
 
@@ -142,3 +144,12 @@ level01@127.0.0.1: : user's name and host address
 . : the place where we save our copy, "Current directory"
 
 `scp -P 4242 level01@127.0.0.1:/etc/passwd .`
+
+=> Install the "John the Ripper" and the crack the password.
+
+`flag01@SnowCrash:~$ su flag01
+Password:
+Don't forget to launch getflag !
+flag01@SnowCrash:~$ getflag
+Check flag.Here is your token : f2av5il02puano7naaf6adaaf
+flag01@SnowCrash:~$`
