@@ -117,34 +117,33 @@ flag14:x:3014:3014::/home/flag/flag14:/bin/bash
 ```
 
 `flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash`
-=> Found the clue of flag01, as : ```"42hDRfypTqqnw"```
+=> Found the clue of flag01, as : ```"42hDRfypTqqnw"```  I try to put ```42hDRfypTqqnw``` as password but this was wrong password!
 
-5. I try to put ```42hDRfypTqqnw``` as password but this was wrong password. Then, maybe we should decode the ```42hDRfypTqqnw```? 
+6. Then, what if we decode the ```42hDRfypTqqnw```? What if this password has been hashed? 
 
 The password is **hashed**, so need to find the algorithm to find the way to crack the hashed password
 => Need to use "John the Ripper" to crack the password, but John is not installed on the file
 
-https://www.openwall.com/john/
-
-John the Ripper : is the open source password cracking tool available for many operating systems.
-
-Need to know the notion of "hash"
-
+- What is **hash**?
 One way function =======>
 Input -> Hash Function -> Output
 <======= Impossible to reverse the hash
 
-- Before executing the "John the Ripper", first, we need to copy our password safely.
+**John the Ripper**: is the open source password cracking tool available for many operating systems.
+https://www.openwall.com/john/
 
-scp :Secure Copy
--P 4242 :connection for ssh, we use port 4242
+- Before executing the "John the Ripper", first, we need to copy our password safely.
+```scp -P 4242 level01@127.0.0.1:/etc/passwd .```
+
+```
+- scp :Secure Copy
+- -P 4242 :connection for ssh, we use port 4242
 level01@127.0.0.1: : user's name and host address
 /etc/passwd : path of file that we will copy
 . : the place where we save our copy, "Current directory"
+```
 
-`scp -P 4242 level01@127.0.0.1:/etc/passwd .`
-
-=> Install the "John the Ripper" and the crack the password.
+Let's  install the "John the Ripper" and the crack the password!
 
 ````flag01@SnowCrash:~$ su flag01
 Password:
