@@ -117,12 +117,12 @@ flag14:x:3014:3014::/home/flag/flag14:/bin/bash
 ```
 
 `flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash`
-=> Found the clue of flag01,
-maybe decode the "42hDRfypTqqnw"?
+=> Found the clue of flag01, as : ```"42hDRfypTqqnw"```
 
-5. Try to put this password ? This was wrong password
+5. I try to put ```42hDRfypTqqnw``` as password but this was not the correct password.
+=> Then, maybe we should decode the ```42hDRfypTqqnw```? 
 
-The password is hashed, so need to find the algorithm to find the way to crack the hashed password
+The password is **hashed**, so need to find the algorithm to find the way to crack the hashed password
 => Need to use "John the Ripper" to crack the password, but John is not installed on the file
 
 https://www.openwall.com/john/
