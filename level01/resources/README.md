@@ -21,7 +21,7 @@ find / -type f -user "flag01" 2>/dev/null
 find / -type f -user "user01" 2>/dev/null
 ```
 
-=> Nothing came out
+👉 Nothing came out
 
 4. try another one.
 
@@ -29,9 +29,7 @@ find / -type f -user "user01" 2>/dev/null
 find / -type f -user "level01" 2>/dev/null
 ```
 
-=> with this command, I got the results as below,
-
-=> but nothing is related to the "password" or "flag01" or "user01"
+👉  with this command, I got the results as below, but nothing is related to the "password" or "flag01" or "user01"
 
 ```
 level01@SnowCrash:~$ find / -type f -user "level01" 2>/dev/null
@@ -117,12 +115,12 @@ flag14:x:3014:3014::/home/flag/flag14:/bin/bash
 ```
 
 `flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash`
-=> Found the clue of flag01, as : ```"42hDRfypTqqnw"```  I try to put ```42hDRfypTqqnw``` as password but this was wrong password!
+👉  Found the clue of flag01, as : ```"42hDRfypTqqnw"```  I try to put ```42hDRfypTqqnw``` as password but this was wrong password!
 
-6. Then, what if we decode the ```42hDRfypTqqnw```? What if this password has been hashed? 
+6. Then, what if this password has been hashed? what if we decode the ```42hDRfypTqqnw```? 
 
 The password is **hashed**, so need to find the algorithm to find the way to crack the hashed password
-=> Need to use "John the Ripper" to crack the password, but John is not installed on the file
+👉  Need to use "John the Ripper" to crack the password, but John is not installed on the file
 
 - What is **hash**?
 One way function =======>
