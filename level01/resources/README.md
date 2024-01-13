@@ -9,7 +9,7 @@ ssh -i ~/.ssh/id_rsa.pub level01@165.22.17.96 -p 4242
 2. The password of level01 is the token from level00
 
 ```
-    x24ti5gi3x0ol2eh4esiuxias
+x24ti5gi3x0ol2eh4esiuxias
 ```
 
 3. So, try to apply the same logic as level00
