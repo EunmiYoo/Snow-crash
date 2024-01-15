@@ -1,18 +1,20 @@
 # LEVEL02
 
-1. Login to the level02
+### 1. Login to the level02
 
 ```
 ssh -i ~/.ssh/id_rsa.pub level02@127/0.0.1 -p 4242
 ```
 
-2. The password of level02 is the token from level01
+### 2. The password of level02 is the token from level01
 
 ```
     f2av5il02puano7naaf6adaaf
 ```
 
-3. With ls -la command, we found the pcap file. With a simple _cat_ command, we can see that we need a tool to open it.
+### 3. Find the files and clues
+
+With ls -la command, we found the pcap file. With a simple _cat_ command, we can see that we need a tool to open it.
 
 ```
 level02.pcap
@@ -54,8 +56,43 @@ TCP sends its data in little chunks called IP packets (or IP datagrams). In this
 
 ![Alt text](image-1.png)
 
-we can see the clue of the password as
+we can see the clue of the password as below. But this is still NOT the correct password.
 
 ```
 Password: ft_wandr...NDRel.L0L
+```
+
+In this case, let's change diplay to "hexdump"
+And let's see if they're correctly corresponded to the HEX number and see if they're printable.
+
+![Alt text](image-2.png)
+
+| HEX  | 66  | 74  | 5f  | 77  | 61  | 6e  | 64  | 72  |  7f   |  7f   |  7f   | 4e  | 44  | 52  | 65  | 6c  |  7f   | 4c  | 30  | 4c  |        0d         |
+| :--: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :---: | :---: | :---: | :-: | :-: | :-: | :-: | :-: | :---: | :-: | :-: | :-: | :---------------: |
+| CHAR |  f  |  t  | \_  |  w  |  a  |  n  |  d  |  r  | [DEL] | [DEL] | [DEL] |  N  |  D  |  R  |  e  |  l  | [DEL] |  L  |  0  |  L  | [CARRIAGE RETURN] |
+
+- HEX 7f corresponded to DEL : So, **n, d, r** will be deleted and same for **l**.
+- HEX 0d corresponded to CARRIAGE_RETURN ('\r') : so it represent the end of the line.
+
+So, password should be from `ft_wandr...NDRel.L0L` to `ft_waNDReL0L`
+
+So, we found our password! Let's put our password into **flag02**
+
+```
+ft_waNDReL0L
+```
+
+```
+level02@SnowCrash:~$ su flag02
+Password:
+Don't forget to launch getflag !
+flag02@SnowCrash:~$ getflag
+Check flag.Here is your token : kooda2puivaav1idi4f57q8iq
+flag02@SnowCrash:~$
+```
+
+### 4. Password for level03
+
+```
+kooda2puivaav1idi4f57q8iq
 ```
