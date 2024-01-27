@@ -10,8 +10,8 @@ With a command of _ls_, we found a file written in perl script. <ins>This is a s
 
 In summary, the script takes a parameter named "x" from the query string, uses it as a command, executes the command, and prints the result.
 
-> [!NOTE] What is CGI? :
-
+> **Note:**
+> What is CGI? :
 > _CGI, or Common Gateway Interface, is a standard interface that enables communication between a web server and external programs or scripts. It allows for the creation of dynamic web pages, processing user input, and interaction with databases._
 
 ```
@@ -123,8 +123,7 @@ Ask your administrator to install one of them
 Content-type: text/html
 ```
 
-> [!NOTE]
-
+> **Note:**
 > PERL (Practical Extraction and Reporting Language) ? Perl is a high-level, general-purpose programming language that was originally developed for text manipulation and used extensively for system administration tasks.
 
 > 1. Perl was initially designed for efficient text processing, making it well-suited for tasks involving regular expressions, string mainpulation, and file processing.
