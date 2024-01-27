@@ -6,7 +6,7 @@ Put the password for the level04.
 qi0maab88jeaj46qoumi7maus
 ```
 
-With a command of _ls_, we found a file written in perl script. <ins>This is a simple **CGI**(Common Gateway Interface) script that takes a parameter "x" from the query string adn prints the result of runnig the command specified by the parameter using the 'echo' commmand. <ins>
+With **ls** command, we found a file written in perl script. <ins>This is a simple **CGI**(Common Gateway Interface) script that takes a parameter "x" from the query string and prints the result of runnig the command specified by the parameter using the 'echo' commmand. <ins>
 
 In summary, the script takes a parameter named "x" from the query string, uses it as a command, executes the command, and prints the result.
 
