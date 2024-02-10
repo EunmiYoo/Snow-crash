@@ -84,10 +84,10 @@ HELLO_WORLD
 
 Therefore, when you run `./level07`, the `level07` program is executed with the value of the `LOGNAME` environment variable set to "HELLO_WORLD". As a result, the program prints "HELLO_WORLD" because that is the value of the `LOGNAME` variable that it uses during execution.
 
-With the same logic, I use the command **export &getflag** and I got the very interesting informations.
+With the same logic, I use the command **export** and I got the very interesting informations.
 
 ```
-level07@SnowCrash:~$ export &getflag
+level07@SnowCrash:~$ export
 [1] 15957
 declare -x HOME="/home/user/level07"
 declare -x LANG="en_US.UTF-8"
