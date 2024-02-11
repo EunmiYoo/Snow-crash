@@ -60,9 +60,11 @@ level09@SnowCrash:~$ ./level09 ab
 ac
 level09@SnowCrash:~$ ./level09 abc
 ace
+level09@SnowCrash:~$ ./level09 aaaaaa
+abcdef
 ```
 
-When I executed the string character, I got the result as below.
+When I executed the string character, I got the result as below. Same logic for the same character of string.
 
 ```
 level09@SnowCrash:~$ ./level09 abcd
@@ -93,6 +95,7 @@ level09@SnowCrash:~$ ./level09 1234
 2 - index 1, ascii + 1, output 3
 3 - index 2, ascii + 2, output 5
 4 - index 3, ascii + 3, output 7
+// the index value has been added for each char.
 ```
 
 I also, put the value that we've got from the token and it printed the non-printable charachters.
@@ -110,4 +113,102 @@ So, if we resume this situation:
 
 2. And there's also non printbale value to be printed in non readable way for humans.
 
-👉 So, all we have to do is to create the code to decode it. I will use the C decode
+👉 So, all we have to do is to create the code to decode it. **This function transforms a given string by subtracting an index value from each character's ASCII value and then prints the result.**
+
+👉 Here's how the transformation works using an example with the input string "abcd":
+
+```
+level09@SnowCrash:~$ ./level09 aaaa
+abcd
+```
+
+This explains how "abcd" transformed as "aaaa".
+
+- The ASCII value of 'a' is 97, and its index value is 0. So, the output value is 'a' - 0 = 'a'.
+- The ASCII value of 'b' is 98, and its index value is 1. So, the output value is 'b' - 1 = 'a'.
+- The ASCII value of 'c' is 99, and its index value is 2. So, the output value is 'c' - 2 = 'a'.
+- The ASCII value of 'd' is 100, and its index value is 3. So, the output value is 'd' - 3 = 'a'.
+
+Therefore, each character in the input string is transformed based on its position in the string, and the transformed result is printed.
+
+<details>
+  <summary> Decode </summary>
+  
+```
+#include <stdio.h>
+
+int main (int argc, char *argv[])
+{
+char *arg;
+int i = 0;
+
+    if (argc != 2) {
+        fprintf(stderr, "Only one argument is accepted!!👾\n");
+        return 1;
+    }
+
+    arg = argv[1];
+    while (*arg) {
+        printf("%c", *arg -i);
+        i++;
+        arg++;
+    }
+    printf("\n");
+    return 0;
+
+}
+
+```
+
+How to use ?
+Try to compile inside the tmp directory to avoid the permission denied issues.
+
+```
+
+level09@SnowCrash:/tmp$ gcc decode.c -o decode
+
+```
+
+  </details>
+
+
+So, we got our token
+
+```
+
+level09@SnowCrash:~$ cat token | xargs /tmp/decode
+f3iji1ju5yuevaus41q1afiuq
+
+```
+This command performs a transformation on the content of the file named "token" using a custom program located at "/tmp/decode". Let's break it down:
+
+- `cat token`: This command reads the content of the file named "token" and outputs it to the standard output.
+
+- `|`: This symbol is called a pipe and it is used to pass the output of one command as the input to another command.
+
+- `xargs /tmp/decode`: This command takes each line of input from the previous command (the content of "token") and passes it as an argument to the program located at "/tmp/decode".
+
+- `:`: This is an argument separator. It separates the command from its arguments.
+
+So, in summary, this command reads the content of the file "token", passes each line of content as an argument to the program "/tmp/decode", and performs some transformation or decoding operation on it. The ":" is just an argument separator and doesn't have any special meaning in this context.
+
+
+
+Try to retrieve the password
+
+```
+
+level09@SnowCrash:~$ su flag09
+Password: f3iji1ju5yuevaus41q1afiuq
+Don't forget to launch getflag !
+flag09@SnowCrash:~$ getflag
+Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
+
+```
+
+
+<details>
+  <summary> Password </summary>
+  s5cAJpM8ev6XHw998pRWG728z
+  </details>
+```
