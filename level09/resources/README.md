@@ -132,7 +132,7 @@ This explains how "abcd" transformed as "aaaa".
 Therefore, each character in the input string is transformed based on its position in the string, and the transformed result is printed.
 
 <details>
-  <summary> Decode </summary>
+  <summary> Decode code 👻 </summary>
   
 ```
 #include <stdio.h>
@@ -142,21 +142,36 @@ int main (int argc, char *argv[])
 char *arg;
 int i = 0;
 
-    if (argc != 2) {
-        fprintf(stderr, "Only one argument is accepted!!👾\n");
-        return 1;
-    }
-
-    arg = argv[1];
-    while (*arg) {
-        printf("%c", *arg -i);
-        i++;
-        arg++;
-    }
-    printf("\n");
-    return 0;
-
+// protection for only one argument
+if (argc != 2) {
+fprintf(stderr, "Only one argument is accepted!!👾\n");
+return 1;
 }
+
+// arg = first argv[1]. So the first arugments after ./a.out (execution)
+arg = argv[1];
+// while loop until the end of the argv[1]
+while (*arg) {
+printf("%c", *arg -i);
+// \*arg: current index position
+// this statement prints the current character pointed to by 'arg', after subtracting the value of i, This substraction operation modifies the ASCII value of the character.
+i++; // increments the value of i by 1 in each iteration of the loop
+arg++; // move the arg pointer to the next chararacter in the string
+}
+printf("\n");
+return 0;
+}
+
+/\* Detailed example for i++; and arg++;
+
+Suppose we have the input string `"hello"`. Here's how the loop would work:
+
+- For the first character `'h'`, `*arg` points to `'h'` and `i` is 0. So, `'h' - 0` equals `'h'`, and `'h'` is printed.
+- Then, `i` is incremented to 1 and `arg` is moved to the next character, `'e'`.
+- For the second character `'e'`, `*arg` points to `'e'` and `i` is now 1. So, `'e' - 1` equals `'d'`, and `'d'` is printed.
+- This process continues for each character in the string.
+
+\*/
 
 ```
 
@@ -211,4 +226,5 @@ Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
   <summary> Password </summary>
   s5cAJpM8ev6XHw998pRWG728z
   </details>
+
 ```
