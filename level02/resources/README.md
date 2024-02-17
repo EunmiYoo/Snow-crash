@@ -31,7 +31,7 @@ d--x--x--x 1 root    users    340 Aug 30  2015 ..
 -r-x------ 1 level02 level02  675 Apr  3  2012 .profile
 ```
 
-We will safely copy level02.pcap file in another local terminal and we will open with a tool "WireShark"
+We will safely copy level02.pcap file in another new local terminal and we will open with a tool "WireShark"
 
 ```
 scp -P 4242 level02@127.0.0.1:/home/user/level02/level02.pcap /tmp
@@ -42,6 +42,8 @@ Go look for _/tmp_ in terminal and we successfully downloaded the pcap file.
 ```
 level02.pcap      100% 8302     8.1KB/s   00:00
 ```
+
+Go look for _/tmp_ in terminal and give the permission to the file with chmod.
 
 Open the pcap file with WireShark.
 We found the clue of the password

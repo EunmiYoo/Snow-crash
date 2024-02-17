@@ -29,7 +29,7 @@ find / -type f -user "user01" 2>/dev/null
 find / -type f -user "level01" 2>/dev/null
 ```
 
-👉  with this command, I got the results as below, but nothing is related to the "password" or "flag01" or "user01"
+👉 with this command, I got the results as below, but nothing is related to the "password" or "flag01" or "user01"
 
 ```
 level01@SnowCrash:~$ find / -type f -user "level01" 2>/dev/null
@@ -116,39 +116,39 @@ flag14:x:3014:3014::/home/flag/flag14:/bin/bash
 
 `flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash`
 
-👉  Found the clue of flag01, as : ```"42hDRfypTqqnw"```  I try to put ```42hDRfypTqqnw``` as password but this was wrong password!
+👉 Found the clue of flag01, as : `"42hDRfypTqqnw"` I try to put `42hDRfypTqqnw` as password but this was wrong password!
 
-6. Then, what if this password has been hashed? what if we decode the ```42hDRfypTqqnw```? 
+6. Then, what if this password has been hashed? what if we decode the `42hDRfypTqqnw`?
 
 The password is **hashed**, so need to find the algorithm to find the way to crack the hashed password
 
-👉  Need to use "John the Ripper" to crack the password, but John is not installed on the file
+👉 Need to use "John the Ripper" to crack the password, but John is not installed on the file
 
 - What is **hash**?
-One way function =======>
-Input -> Hash Function -> Output
-<======= Impossible to reverse the hash
+  One way function =======>
+  Input -> Hash Function -> Output
+  <======= Impossible to reverse the hash
 
 **John the Ripper**: is the open source password cracking tool available for many operating systems.
 https://www.openwall.com/john/
 
-- Before executing the "John the Ripper", first, we need to copy our password safely.
-```scp -P 4242 level01@127.0.0.1:/etc/passwd .```
+Let's install the "John the Ripper" and the crack the password!
 
 ```
-- scp :Secure Copy
-- -P 4242 :connection for ssh, we use port 4242
-level01@127.0.0.1: : user's name and host address
-/etc/passwd : path of file that we will copy
-. : the place where we save our copy, "Current directory"
+brew install john
 ```
 
-Let's  install the "John the Ripper" and the crack the password!
+```
+echo "42hDRfypTqqnw" > text
+john text --show
+ ?:abcdefg
 
-````flag01@SnowCrash:~$ su flag01
+1 password hash cracked, 0 left
+```
+
+```flag01@SnowCrash:~$ su flag01
 Password:
 Don't forget to launch getflag !
 flag01@SnowCrash:~$ getflag
 Check flag.Here is your token : f2av5il02puano7naaf6adaaf
-flag01@SnowCrash:~$```
-````
+```

@@ -1,11 +1,12 @@
-LEVEL00
-=======
+# LEVEL00
+
 1.  First, connect to ssh with your ip address :
+
 ```
     ssh -i ~/.ssh/id_rsa.pub level00@165.22.17.96 -p 4242
 
     level00@165.22.17.96's password:
-        
+
     level00@SnowCrash:~$ ls
     level00@SnowCrash:~$ ls -la
     total 12
@@ -14,41 +15,44 @@ LEVEL00
     -r-xr-x---+ 1 level00 level00 220 Apr 3 2012 .bash_logout
     -r-xr-x---+ 1 level00 level00 3518 Aug 30 2015 .bashrc
     -r-xr-x---+ 1 level00 level00 675 Apr 3 2012 .profile
- ```       
+```
+
 2.  Nothing can be found with ls.
     Result of ls -la
-    
+
     <img src="image-1.png" width="700px" height="200px"></img>
 
 3.  Need to find the password for "su flag00"
 
 4.  Result of wrong password.
- 
+
     ![Alt text](image-2.png)
 
 5.  Once registered, you’re gonna have to find the password that will log you in with
-the "flagXX" account. So, we need to find the account who use flag00 (written in the subject). So, try to put the command as below to find the flag00 in the file type.
+    the "flagXX" account. So, we need to find the account who use flag00 (written in the subject). So, try to put the command as below to find the flag00 in the file type.
 
 `find / -type f -user flag00`
+
+Below command is useful to discard error messages. It simplifies the result.
+`find / -user flag00 2>/dev/null`
 
 ```
     1) find / : Starts the search from the root directory. This search will include all directories and subdirecotires
 
     2)  -user flag00 : Specifices the search criterion. It looks for files owned by the user with the username "flag00"
-    
-    3) -exec ls -l {} \;: Executes the ls -l command on each file found. The {} is a placeholder for the current file, and \; signifies the end of the -exec command.
 
-    4)2>/dev/null: Redirects standard error (file descriptor 2) to /dev/null, effectively discarding error messages. This is done to suppress error messages related to inaccessible directories or files due to permission issues.
-```                                                                                     
+    3) -type f : argument to find files
+
+    4) 2>/dev/null: Redirects standard error (file descriptor 5) to /dev/null, effectively discarding error messages. This is done to suppress error messages related to inaccessible directories or files due to permission issues.
+```
 
 There are only 2 file paths which doesn't show "Permission denied"
-
 
 ![Alt text](image-3.png)
 
 They possess the same password as cdiiddwpgswtgt
 
- ![Alt text](image-4.png)
+![Alt text](image-4.png)
 
 => But it was NOT the correct password. We can possibly think, maybe this password is encyrpted? in this case, we need to decrypt them.
 
