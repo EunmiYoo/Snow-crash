@@ -80,7 +80,7 @@ c - index 2, ascii + 2, output e
 d - index 3, ascii + 3, output g
 
 
-output: acegi
+output: aceg
 ```
 
 Same logic for the number
